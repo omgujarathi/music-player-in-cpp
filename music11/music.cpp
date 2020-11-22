@@ -110,6 +110,7 @@ void printlist(struct node *first)
 void count_nodes(struct node *first)
 {
     int i=0;
+    first=first->next;
     while (first->next!=NULL)
     {
         first=first->next;
@@ -123,7 +124,7 @@ void count_nodes(struct node *first)
 struct node  *del_pos(struct node *pointer, int pos)
 {
 
-           struct node *n1,*prev1,*temp;
+           struct node *prev1,*temp;
            prev1= ( struct node *)malloc(sizeof(node));
            temp= (struct node *)malloc(sizeof(node));
            int i=0;
@@ -276,11 +277,11 @@ void play11(struct node *first)
     char song[100];
     printlist(first);
     int flag=0;
-    
+    first=first->next;
 	long int A;
     while(first!=NULL)
     {
-    	 first=first->next;
+    	 
         cout<<"\n\a\a\a\a=>Now Playing......"<<first->song<<endl;
         flag++;
         PlaySound(TEXT(first->song), NULL, SND_ASYNC|SND_FILENAME);
@@ -290,9 +291,12 @@ void play11(struct node *first)
 	cin >> A;
 	system ("CLS");
 	if (A == 1){
+		PlaySound(0, 0, 0); cout << "To goto menu ";system ("PAUSE"); 
 	}
 	if (A == 2){  }
+	if (A == 3){ break; }
     push (song);
+    first=first->next;
    
     }
     if(flag==0)
