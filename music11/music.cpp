@@ -175,7 +175,7 @@ void search1(struct node *first)
 {
     char song[100];
     cout<<"\n\a\a\a\aEnter song To be Searched- ";
-    cin>>song);
+    cin>>song;
     int flag=0;
 
     while(first!=NULL)
@@ -241,7 +241,7 @@ void play(struct node *first)
     char song[100];
     printlist(first);
     cout<<"\n\a\a\a\aChoose song you wish to play- ";
-    cin>>song);
+    cin>>song;
     int flag=0;
 	long int A;
     while(first!=NULL)
@@ -285,8 +285,8 @@ void play11(struct node *first)
         flag++;
         PlaySound(TEXT(first->song), NULL, SND_ASYNC|SND_FILENAME);
 	cout << "\t1 = STOP\n"
-			"\t1 = next song\n"
-			"\t2 = goto main menu (use this option after end of music\n";
+			"\t2 = next song\n"
+			"\t3 = goto main menu (use this option after end of music\n";
 	cin >> A;
 	system ("CLS");
 	if (A == 1){
